@@ -6,6 +6,7 @@
     <title
       data-en="Akshay Oza - LIC Development Officer Mumbai"
       data-hi="अक्षय ओझा - एलआईसी डेवलपमेंट ऑफिसर मुंबई"
+      data-mr="अक्षय ओझा - एलआयसी विकास अधिकारी मुंबई"
     >
       Akshay Oza - LIC Development Officer Mumbai
     </title>
@@ -13,12 +14,14 @@
       name="description"
       data-en="Join LIC as an agent with Akshay Oza, experienced Development Officer in Mumbai. Best commission rates, training support, and career growth opportunities."
       data-hi="मुंबई में अनुभवी डेवलपमेंट ऑफिसर राजेश कुमार के साथ एलआईसी एजेंट के रूप में जुड़ें। सर्वोत्तम कमीशन दरें, प्रशिक्षण सहायता और करियर विकास के अवसर।"
+      data-mr="मुंबईतील अनुभवी विकास अधिकारी अक्षय ओझा यांच्यासोबत एलआयसी एजंट म्हणून सामील व्हा. सर्वोत्तम कमिशन दर, प्रशिक्षण समर्थन आणि करिअर वाढीच्या संधी."
       content="Join LIC as an agent with Akshay Oza, experienced Development Officer in Mumbai. Best commission rates, training support, and career growth opportunities."
     />
     <meta
       name="keywords"
       data-en="LIC agent, LIC development officer, LIC Mumbai, insurance agent, LIC career, life insurance"
       data-hi="एलआईसी एजेंट, एलआईसी डेवलपमेंट ऑफिसर, एलआईसी मुंबई, बीमा एजेंट, एलआईसी करियर, जीवन बीमा"
+      data-mr="एलआयसी एजंट, एलआयसी विकास अधिकारी, एलआयसी मुंबई, विमा एजंट, एलआयसी करिअर, जीवन विमा"
       content="LIC agent, LIC development officer, LIC Mumbai, insurance agent, LIC career, life insurance"
     />
     <link
@@ -105,38 +108,36 @@
         flex-shrink: 0;
       }
 
-      /* Language Toggle */
-      .language-toggle {
-        display: flex;
-        align-items: center;
+      /* Language Dropdown */
+      .language-dropdown {
+        position: relative;
+        display: inline-block;
+        margin-left: auto; /* Pushes dropdown to the right */
         flex-shrink: 0;
       }
 
-      .language-toggle button {
+      .language-dropdown select {
         background: #003366;
         color: #fff;
         border: 1px solid #ffcc00;
-        padding: 8px 15px;
+        padding: 8px 8px;
+        padding-top: 10px; /* Adjusted for better alignment */
         border-radius: 5px;
         cursor: pointer;
         font-weight: bold;
-        transition: background 0.3s, color 0.3s, border-color 0.3s;
+        appearance: none; /* Remove default dropdown arrow */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-repeat: no-repeat;
+        background-position: right 8px top 50%;
+        background-size: 18px auto;
+        padding-right: 25px; /* Make space for the custom arrow */
+        background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffcc00" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
       }
 
-      .language-toggle button:first-child {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-
-      .language-toggle button:last-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-
-      .language-toggle button.active {
-        background: #ffcc00;
-        color: #003366;
-        border-color: #ffcc00;
+      .language-dropdown select:focus {
+        outline: none;
+        border-color: #0066cc;
       }
 
       /* Desktop Specific Styles (Default) */
@@ -149,8 +150,7 @@
         margin-left: auto; /* Pushes itself and the language toggle to the right,
                                 creating space after the logo. Combined with gap on nav,
                                 this helps distribute space. */
-        margin-right: auto; /* Pushes the language toggle further right,
-                                while keeping nav-links somewhat central */
+        margin-right: 20px; /* Add some right margin to separate from dropdown */
       }
 
       /* Hero Section */
@@ -483,19 +483,9 @@
           order: 1;
         }
 
-        .language-toggle {
+        .language-dropdown {
           order: 2;
-          display: flex; /* Ensure buttons are side-by-side */
-          margin: 0 auto; /* Center the button group */
-          /* flex-grow: 1; */ /* REMOVED: Remove flex-grow as we want the buttons attached */
-        }
-        .language-toggle button {
-          border-radius: 0; /* Remove individual button border-radius */
-          border: 1px solid #ffcc00; /* Ensure borders are present */
-        }
-        /* The existing rules below for first-child and active remain, they are correct */
-        .language-toggle button:first-child {
-          border-left: 1px solid #ffcc00; /* Add left border to the first button */
+          margin-left: auto; /* Push dropdown to the right */
         }
 
         .mobile-menu {
@@ -581,25 +571,57 @@
           />
         </div>
         <ul class="nav-links">
-          <li><a href="#home" data-en="Home" data-hi="मुख्य पृष्ठ">Home</a></li>
           <li>
-            <a href="#benefits" data-en="Benefits" data-hi="लाभ">Benefits</a>
+            <a
+              href="#home"
+              data-en="Home"
+              data-hi="मुख्य पृष्ठ"
+              data-mr="मुख्यपृष्ठ"
+              >Home</a
+            >
           </li>
-          <li><a href="#plans" data-en="Plans" data-hi="योजनाएं">Plans</a></li>
           <li>
-            <a href="#calculator" data-en="Calculator" data-hi="कैलकुलेटर"
+            <a href="#benefits" data-en="Benefits" data-hi="लाभ" data-mr="फायदे"
+              >Benefits</a
+            >
+          </li>
+          <li>
+            <a href="#plans" data-en="Plans" data-hi="योजनाएं" data-mr="योजना"
+              >Plans</a
+            >
+          </li>
+          <li>
+            <a
+              href="#calculator"
+              data-en="Calculator"
+              data-hi="कैलकुलेटर"
+              data-mr="कॅल्क्युलेटर"
               >Calculator</a
             >
           </li>
           <li>
-            <a href="#contact" data-en="Contact" data-hi="संपर्क करें"
+            <a
+              href="#contact"
+              data-en="Contact"
+              data-hi="संपर्क करें"
+              data-mr="संपर्क करा"
               >Contact</a
             >
           </li>
         </ul>
-        <div class="language-toggle">
-          <button id="lang-en" class="active">EN</button>
-          <button id="lang-hi">HI</button>
+        <div class="language-dropdown" style="margin-right: 10px;">
+          <label
+            for="language-select"
+            style="color: white; margin: 0;"
+            data-hi="भाषा"
+            data-mr="भाषा"
+            >Language:</label
+          >
+          <select id="language-select">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी</option>
+            <option value="mr">मराठी</option>
+          </select>
         </div>
         <div class="mobile-menu">
           <i class="fas fa-bars"></i>
@@ -614,18 +636,22 @@
           alt="Akshay Oza- LIC Development Officer"
           class="profile-img"
         />
-        <h1 data-en="Akshay Oza" data-hi="अक्षय ओझा">Akshay Oza</h1>
+        <h1 data-en="Akshay Oza" data-hi="अक्षय ओझा" data-mr="अक्षय ओझा">
+          Akshay Oza
+        </h1>
         <p
           id="development"
           style="font-weight: 600"
           data-en="Development Officer - LIC of India, Mumbai DO I"
           data-hi="विकास अधिकारी - भारतीय जीवन बीमा निगम, मुंबई मंडल I"
+          data-mr="विकास अधिकारी - भारतीय आयुर्विमा महामंडळ, मुंबई विभाग I"
         >
           Development Officer - LIC of India, Mumbai DO I
         </p>
         <p
           data-en='"Your trusted partner for a secure financial future. I help agents build successful careers while serving our community&apos;s insurance needs."'
           data-hi='"एक सुरक्षित वित्तीय भविष्य के लिए आपका विश्वसनीय साथी। मैं एजेंटों को सफल करियर बनाने में मदद करता हूँ, साथ ही हमारे समुदाय की बीमा आवश्यकताओं को पूरा करता हूँ।"'
+          data-mr='"सुरक्षित आर्थिक भविष्यासाठी तुमचा विश्वासार्ह भागीदार. मी एजंटांना यशस्वी करिअर घडवण्यास मदत करतो, तसेच आपल्या समाजाच्या विमा गरजा पूर्ण करतो."'
         >
           "Your trusted partner for a secure financial future. I help agents
           build successful careers while serving our community's insurance
@@ -636,6 +662,7 @@
           class="cta-button"
           data-en='<i class="fas fa-handshake"></i> Join My Team Today'
           data-hi='<i class="fas fa-handshake"></i> मेरी टीम से आज ही जुड़ें'
+          data-mr='<i class="fas fa-handshake"></i> आजच माझ्या टीममध्ये सामील व्हा'
         >
           <i class="fas fa-handshake"></i> Join My Team Today
         </a>
@@ -648,6 +675,7 @@
           class="section-title"
           data-en="Why Join LIC with Me?"
           data-hi="मुझसे एलआईसी से क्यों जुड़ें?"
+          data-mr="माझ्यासोबत एलआयसीमध्ये का सामील व्हा?"
         >
           Why Join LIC with Me?
         </h2>
@@ -656,12 +684,17 @@
             <div class="benefit-icon">
               <i class="fas fa-percentage"></i>
             </div>
-            <h3 data-en="Highest Commission Rates" data-hi="उच्चतम कमीशन दरें">
+            <h3
+              data-en="Highest Commission Rates"
+              data-hi="उच्चतम कमीशन दरें"
+              data-mr="सर्वाधिक कमिशन दर"
+            >
               Highest Commission Rates
             </h3>
             <p
               data-en="Earn up to 28% first year commission and 7.5% renewal commission. Additional performance bonuses and incentives for top performers."
               data-hi="पहले वर्ष 28% तक कमीशन और 7.5% नवीनीकरण कमीशन कमाएँ। शीर्ष प्रदर्शन करने वालों के लिए अतिरिक्त प्रदर्शन बोनस और प्रोत्साहन।"
+              data-mr="पहिल्या वर्षी 28% पर्यंत कमिशन आणि 7.5% नूतनीकरण कमिशन कमवा. उत्कृष्ट काम करणाऱ्यांसाठी अतिरिक्त कार्यक्षमता बोनस आणि प्रोत्साहन."
             >
               Earn up to 28% first year commission and 7.5% renewal commission.
               Additional performance bonuses and incentives for top performers.
@@ -671,12 +704,17 @@
             <div class="benefit-icon">
               <i class="fas fa-graduation-cap"></i>
             </div>
-            <h3 data-en="Comprehensive Training" data-hi="व्यापक प्रशिक्षण">
+            <h3
+              data-en="Comprehensive Training"
+              data-hi="व्यापक प्रशिक्षण"
+              data-mr="व्यापक प्रशिक्षण"
+            >
               Comprehensive Training
             </h3>
             <p
               data-en="Free training programs, sales techniques, product knowledge, and digital marketing strategies. Continuous skill development support."
               data-hi="निःशुल्क प्रशिक्षण कार्यक्रम, बिक्री तकनीक, उत्पाद ज्ञान और डिजिटल मार्केटिंग रणनीतियाँ। निरंतर कौशल विकास सहायता।"
+              data-mr="विनामूल्य प्रशिक्षण कार्यक्रम, विक्री तंत्र, उत्पादन ज्ञान आणि डिजिटल मार्केटिंग धोरणे. सतत कौशल्य विकासासाठी समर्थन."
             >
               Free training programs, sales techniques, product knowledge, and
               digital marketing strategies. Continuous skill development
@@ -687,12 +725,17 @@
             <div class="benefit-icon">
               <i class="fas fa-chart-line"></i>
             </div>
-            <h3 data-en="Career Growth" data-hi="करियर में वृद्धि">
+            <h3
+              data-en="Career Growth"
+              data-hi="करियर में वृद्धि"
+              data-mr="करिअर वाढ"
+            >
               Career Growth
             </h3>
             <p
               data-en="Clear promotion path from Agent to Unit Manager to Branch Manager. Leadership development and mentorship programs."
               data-hi="एजेंट से यूनिट मैनेजर से शाखा प्रबंधक तक स्पष्ट पदोन्नति का मार्ग। नेतृत्व विकास और मेंटरशिप कार्यक्रम।"
+              data-mr="एजंट ते युनिट मॅनेजर ते शाखा व्यवस्थापक अशी स्पष्ट पदोन्नती. नेतृत्व विकास आणि मार्गदर्शन कार्यक्रम."
             >
               Clear promotion path from Agent to Unit Manager to Branch Manager.
               Leadership development and mentorship programs.
@@ -702,12 +745,17 @@
             <div class="benefit-icon">
               <i class="fas fa-mobile-alt"></i>
             </div>
-            <h3 data-en="Digital Support" data-hi="डिजिटल सहायता">
+            <h3
+              data-en="Digital Support"
+              data-hi="डिजिटल सहायता"
+              data-mr="डिजिटल समर्थन"
+            >
               Digital Support
             </h3>
             <p
               data-en="Advanced CRM tools, mobile apps, online proposal system, and digital marketing support for better client management."
               data-hi="बेहतर ग्राहक प्रबंधन के लिए उन्नत सीआरएम उपकरण, मोबाइल ऐप, ऑनलाइन प्रस्ताव प्रणाली और डिजिटल मार्केटिंग सहायता।"
+              data-mr="उत्कृष्ट ग्राहक व्यवस्थापनासाठी प्रगत सीआरएम साधने, मोबाइल ॲप्स, ऑनलाइन प्रस्ताव प्रणाली आणि डिजिटल मार्केटिंग समर्थन."
             >
               Advanced CRM tools, mobile apps, online proposal system, and
               digital marketing support for better client management.
@@ -717,12 +765,17 @@
             <div class="benefit-icon">
               <i class="fas fa-award"></i>
             </div>
-            <h3 data-en="Recognition & Rewards" data-hi="मान्यता और पुरस्कार">
+            <h3
+              data-en="Recognition & Rewards"
+              data-hi="मान्यता और पुरस्कार"
+              data-mr="मान्यता आणि पुरस्कार"
+            >
               Recognition & Rewards
             </h3>
             <p
               data-en="Monthly awards, annual recognition ceremonies, foreign trips, and special incentives for achieving targets."
               data-hi="मासिक पुरस्कार, वार्षिक सम्मान समारोह, विदेश यात्राएँ और लक्ष्य प्राप्त करने के लिए विशेष प्रोत्साहन।"
+              data-mr="मासिक पुरस्कार, वार्षिक सत्कार समारंभ, परदेशी दौरे आणि उद्दिष्टे साध्य करण्यासाठी विशेष प्रोत्साहन."
             >
               Monthly awards, annual recognition ceremonies, foreign trips, and
               special incentives for achieving targets.
@@ -732,10 +785,17 @@
             <div class="benefit-icon">
               <i class="fas fa-users"></i>
             </div>
-            <h3 data-en="Team Building" data-hi="टीम निर्माण">Team Building</h3>
+            <h3
+              data-en="Team Building"
+              data-hi="टीम निर्माण"
+              data-mr="टीम तयार करणे"
+            >
+              Team Building
+            </h3>
             <p
               data-en="Build your own team, earn override commission, and create a sustainable income stream through team development."
               data-hi="अपनी खुद की टीम बनाएं, ओवरराइड कमीशन कमाएँ, और टीम विकास के माध्यम से एक स्थायी आय स्रोत बनाएँ।"
+              data-mr="स्वतःची टीम तयार करा, ओव्हरराइड कमिशन कमवा आणि टीम विकासाद्वारे शाश्वत उत्पन्नाचा स्रोत निर्माण करा."
             >
               Build your own team, earn override commission, and create a
               sustainable income stream through team development.
@@ -751,18 +811,24 @@
           class="section-title"
           data-en="Best Selling LIC Plans"
           data-hi="एलआईसी की सर्वाधिक बिकने वाली योजनाएँ"
+          data-mr="सर्वाधिक विक्री होणाऱ्या एलआयसी योजना"
         >
           Best Selling LIC Plans
         </h2>
         <div class="carousel-container">
           <div class="carousel" id="plansCarousel">
             <div class="plan-card">
-              <h3 data-en="LIC Jeevan Utsav" data-hi="एलआईसी जीवन उत्सव">
+              <h3
+                data-en="LIC Jeevan Utsav"
+                data-hi="एलआईसी जीवन उत्सव"
+                data-mr="एलआयसी जीवन उत्सव"
+              >
                 LIC Jeevan Utsav
               </h3>
               <p
                 data-en="Non‑Par, Non‑Linked Whole‑Life Plan with Guaranteed Additions &amp; Regular/Flexi Income"
                 data-hi="गैर-पार, गैर-लिंक्ड संपूर्ण जीवन योजना जिसमें गारंटीड अतिरिक्त और नियमित/फ्लेक्सी आय शामिल है"
+                data-mr="नॉन-पार, नॉन-लिंक्ड संपूर्ण जीवन योजना ज्यात हमीपूर्वक वाढीव आणि नियमित/फ्लेक्सी उत्पन्न समाविष्ट आहे."
               >
                 Non‑Par, Non‑Linked Whole‑Life Plan with Guaranteed Additions &
                 Regular/Flexi Income
@@ -771,30 +837,35 @@
                 <li
                   data-en="✓ Life cover for your whole life (till age 100)"
                   data-hi="✓ आपके पूरे जीवन के लिए जीवन बीमा (100 वर्ष की आयु तक)"
+                  data-mr="✓ तुमच्या संपूर्ण आयुष्यासाठी (100 वर्षांपर्यंत) जीवन विमा संरक्षण"
                 >
                   ✓ Life cover for your whole life (till age 100)
                 </li>
                 <li
                   data-en="✓ Get money every year after premium payment ends"
                   data-hi="✓ प्रीमियम भुगतान समाप्त होने के बाद हर साल पैसे प्राप्त करें"
+                  data-mr="✓ प्रीमियम भरण्याची मुदत संपल्यावर दरवर्षी पैसे मिळवा"
                 >
                   ✓ Get money every year after premium payment ends
                 </li>
                 <li
                   data-en="✓ Extra guaranteed additions added during premium years"
                   data-hi="✓ प्रीमियम वर्षों के दौरान अतिरिक्त गारंटीड अतिरिक्त जोड़े गए"
+                  data-mr="✓ प्रीमियम भरण्याच्या वर्षांमध्ये अतिरिक्त हमीपूर्वक वाढीव रक्कम जमा होईल"
                 >
                   ✓ Extra guaranteed additions added during premium years
                 </li>
                 <li
                   data-en="✓ Choose yearly or flexible income payout"
                   data-hi="✓ वार्षिक या लचीली आय भुगतान चुनें"
+                  data-mr="✓ वार्षिक किंवा लवचिक उत्पन्नाचा पर्याय निवडा"
                 >
                   ✓ Choose yearly or flexible income payout
                 </li>
                 <li
                   data-en="✓ Loan, surrender, and rider options available"
                   data-hi="✓ ऋण, समर्पण और राइडer विकल्प उपलब्ध हैं"
+                  data-mr="✓ कर्ज, समर्पण आणि रायडर पर्याय उपलब्ध"
                 >
                   ✓ Loan, surrender, and rider options available
                 </li>
@@ -803,18 +874,24 @@
                 class="plan-commission"
                 data-en="Commission: Up to 35%"
                 data-hi="कमीशन: 35% तक"
+                data-mr="कमिशन: 35% पर्यंत"
               >
                 Commission: Up to 35%
               </div>
             </div>
 
             <div class="plan-card">
-              <h3 data-en="LIC Jeevan Labh" data-hi="एलआईसी जीवन लाभ">
+              <h3
+                data-en="LIC Jeevan Labh"
+                data-hi="एलआईसी जीवन लाभ"
+                data-mr="एलआयसी जीवन लाभ"
+              >
                 LIC Jeevan Labh
               </h3>
               <p
                 data-en="Money-saving plan with bonus and limited premium payment"
                 data-hi="बोनस और सीमित प्रीमियम भुगतान के साथ पैसे बचाने की योजना"
+                data-mr="बोनस आणि मर्यादित प्रीमियम भरण्याची सुविधा असलेली बचत योजना"
               >
                 Money-saving plan with bonus and limited premium payment
               </p>
@@ -822,30 +899,35 @@
                 <li
                   data-en="✓ Pay for a few years, get cover for a longer time"
                   data-hi="✓ कुछ वर्षों के लिए भुगतान करें, लंबे समय के लिए कवर प्राप्त करें"
+                  data-mr="✓ काही वर्षांसाठी भरा, जास्त कालावधीसाठी कव्हर मिळवा"
                 >
                   ✓ Pay for a few years, get cover for a longer time
                 </li>
                 <li
                   data-en="✓ Get full amount plus bonuses on maturity or death"
                   data-hi="✓ परिपक्वता या मृत्यु पर पूरी राशि और बोनस प्राप्त करें"
+                  data-mr="✓ मुदतपूर्ती किंवा मृत्यूवर संपूर्ण रक्कम अधिक बोनस मिळवा"
                 >
                   ✓ Get full amount plus bonuses on maturity or death
                 </li>
                 <li
                   data-en="✓ At least 105% of premiums paid in case of death"
                   data-hi="✓ मृत्यु के मामले में भुगतान किए गए प्रीमियम का कम से कम 105%"
+                  data-mr="✓ मृत्यू झाल्यास भरलेल्या प्रीमियमच्या किमान 105% रक्कम"
                 >
                   ✓ At least 105% of premiums paid in case of death
                 </li>
                 <li
                   data-en="✓ Option to receive death benefit in installments"
                   data-hi="✓ मृत्यु लाभ किश्तों में प्राप्त करने का विकल्प"
+                  data-mr="✓ मृत्यू लाभ हप्त्यांमध्ये मिळवण्याचा पर्याय"
                 >
                   ✓ Option to receive death benefit in installments
                 </li>
                 <li
                   data-en="✓ Loan and tax benefits available"
                   data-hi="✓ ऋण और कर लाभ उपलब्ध हैं"
+                  data-mr="✓ कर्ज आणि कर लाभांची उपलब्धता"
                 >
                   ✓ Loan and tax benefits available
                 </li>
@@ -854,18 +936,24 @@
                 class="plan-commission"
                 data-en="Commission: Up to ~28% first year"
                 data-hi="कमीशन: पहले वर्ष ~28% तक"
+                data-mr="कमिशन: पहिल्या वर्षी ~28% पर्यंत"
               >
                 Commission: Up to ~28% first year
               </div>
             </div>
 
             <div class="plan-card">
-              <h3 data-en="LIC Jeevan Umang" data-hi="एलआईसी जीवन उमंग">
+              <h3
+                data-en="LIC Jeevan Umang"
+                data-hi="एलआईसी जीवन उमंग"
+                data-mr="एलआयसी जीवन उमंग"
+              >
                 LIC Jeevan Umang
               </h3>
               <p
                 data-en="Lifetime cover with yearly income and final lump-sum payout"
                 data-hi="वार्षिक आय और अंतिम एकमुश्त भुगतान के साथ आजीवन कवर"
+                data-mr="वार्षिक उत्पन्न आणि अंतिम एकरकमी पेआउटसह आयुष्यभराचे संरक्षण"
               >
                 Lifetime cover with yearly income and final lump-sum payout
               </p>
@@ -873,30 +961,35 @@
                 <li
                   data-en="✓ Life cover till age 100 with limited premium payment"
                   data-hi="✓ सीमित प्रीमियम भुगतान के साथ 100 वर्ष की आयु तक जीवन कवर"
+                  data-mr="✓ मर्यादित प्रीमियम भरून 100 वर्षांपर्यंत जीवन संरक्षण"
                 >
                   ✓ Life cover till age 100 with limited premium payment
                 </li>
                 <li
                   data-en="✓ Get 8% of the sum assured every year after premium term"
                   data-hi="✓ प्रीमियम अवधि के बाद हर साल बीमित राशि का 8% प्राप्त करें"
+                  data-mr="✓ प्रीमियम कालावधीनंतर दरवर्षी विम्याच्या रकमेच्या 8% मिळवा"
                 >
                   ✓ Get 8% of the sum assured every year after premium term
                 </li>
                 <li
                   data-en="✓ Get full payout plus bonuses on maturity or death"
                   data-hi="✓ परिपक्वता या मृत्यु पर पूरी राशि और बोनस प्राप्त करें"
+                  data-mr="✓ मुदतपूर्ती किंवा मृत्यूवर संपूर्ण रक्कम अधिक बोनस मिळवा"
                 >
                   ✓ Get full payout plus bonuses on maturity or death
                 </li>
                 <li
                   data-en="✓ Choose how you want to receive the payout"
                   data-hi="✓ चुनें कि आप भुगतान कैसे प्राप्त करना चाहते हैं"
+                  data-mr="✓ तुम्हाला पेआउट कसे मिळवायचे आहे ते निवडा"
                 >
                   ✓ Choose how you want to receive the payout
                 </li>
                 <li
                   data-en="✓ Loan, rider, and tax benefits included"
                   data-hi="✓ ऋण, राइडer और कर लाभ शामिल हैं"
+                  data-mr="✓ कर्ज, रायडर आणि कर लाभ समाविष्ट"
                 >
                   ✓ Loan, rider, and tax benefits included
                 </li>
@@ -905,18 +998,24 @@
                 class="plan-commission"
                 data-en="Commission: Up to ~28% first year"
                 data-hi="कमीशन: पहले वर्ष ~28% तक"
+                data-mr="कमिशन: पहिल्या वर्षी ~28% पर्यंत"
               >
                 Commission: Up to ~28% first year
               </div>
             </div>
 
             <div class="plan-card">
-              <h3 data-en="LIC Nivesh Plus" data-hi="एलआईसी निवेश प्लस">
+              <h3
+                data-en="LIC Nivesh Plus"
+                data-hi="एलआईसी निवेश प्लस"
+                data-mr="एलआयसी निवेश प्लस"
+              >
                 LIC Nivesh Plus
               </h3>
               <p
                 data-en="Single premium investment plan with life cover and market returns"
                 data-hi="जीवन कवर और बाजार रिटर्न के साथ एकल प्रीमियम निवेश योजना"
+                data-mr="जीवन संरक्षण आणि बाजारातील परताव्यांसह एकल प्रीमियम गुंतवणूक योजना"
               >
                 Single premium investment plan with life cover and market
                 returns
@@ -925,30 +1024,35 @@
                 <li
                   data-en="✓ Pay once, get both life cover and market-linked returns"
                   data-hi="✓ एक बार भुगतान करें, जीवन कवर और बाजार से जुड़े रिटर्न दोनों प्राप्त करें"
+                  data-mr="✓ एकदा भरा, जीवन संरक्षण आणि बाजार-संबंधित परतावा दोन्ही मिळवा"
                 >
                   ✓ Pay once, get both life cover and market-linked returns
                 </li>
                 <li
                   data-en="✓ Guaranteed additions added at regular intervals"
                   data-hi="✓ नियमित अंतराल पर गारंटीड अतिरिक्त जोड़े गए"
+                  data-mr="✓ नियमित अंतराने हमीपूर्वक वाढीव रक्कम जमा होईल"
                 >
                   ✓ Guaranteed additions added at regular intervals
                 </li>
                 <li
                   data-en="✓ Higher of fund value or sum assured on death"
                   data-hi="✓ मृत्यु पर फंड मूल्य या बीमित राशि में से जो भी अधिक हो"
+                  data-mr="✓ मृत्यू झाल्यास फंड मूल्य किंवा विमा रक्कम यापैकी जास्त असेल ती मिळेल"
                 >
                   ✓ Higher of fund value or sum assured on death
                 </li>
                 <li
                   data-en="✓ Withdraw part of your money after 5 years"
                   data-hi="✓ 5 साल बाद अपने पैसे का कुछ हिस्सा निकालें"
+                  data-mr="✓ 5 वर्षांनंतर तुमच्या पैशाचा काही भाग काढू शकता"
                 >
                   ✓ Withdraw part of your money after 5 years
                 </li>
                 <li
                   data-en="✓ Option for rider and flexible fund switching"
                   data-hi="✓ राइडer और लचीले फंड स्विचिंग का विकल्प"
+                  data-mr="✓ रायडर आणि लवचिक फंड स्विचिंगचा पर्याय"
                 >
                   ✓ Option for rider and flexible fund switching
                 </li>
@@ -957,6 +1061,7 @@
                 class="plan-commission"
                 data-en="Commission: Up to ~25% first year"
                 data-hi="कमीशन: पहले वर्ष ~25% तक"
+                data-mr="कमिशन: पहिल्या वर्षी ~25% पर्यंत"
               >
                 Commission: Up to ~25% first year
               </div>
@@ -978,6 +1083,7 @@
           class="section-title"
           data-en="Commission Calculator"
           data-hi="कमीशन कैलकुलेटर"
+          data-mr="कमिशन कॅल्क्युलेटर"
         >
           Commission Calculator
         </h2>
@@ -986,6 +1092,7 @@
             style="text-align: center; color: #003366; margin-bottom: 2rem"
             data-en="Calculate Your Earning Potential"
             data-hi="अपनी कमाई की संभावना की गणना करें"
+            data-mr="तुमची कमाईची क्षमता मोजा"
           >
             Calculate Your Earning Potential
           </h3>
@@ -995,6 +1102,7 @@
             id="premium"
             data-en-placeholder="Enter Annual Premium (₹)"
             data-hi-placeholder="वार्षिक प्रीमियम (₹) दर्ज करें"
+            data-mr-placeholder="वार्षिक प्रीमियम (₹) प्रविष्ट करा"
             placeholder="Enter Annual Premium (₹)"
           />
           <input
@@ -1003,6 +1111,7 @@
             id="policies"
             data-en-placeholder="Number of Policies per Month"
             data-hi-placeholder="प्रति माह पॉलिसीयों की संख्या"
+            data-mr-placeholder="प्रति महिना पॉलिसींची संख्या"
             placeholder="Number of Policies per Month"
           />
           <input
@@ -1015,7 +1124,10 @@
             oninput="updateCommission(this.value)"
           />
           <div style="text-align: center; margin: 10px 0">
-            <span data-en="Commission Rate:" data-hi="कमीशन दर:"
+            <span
+              data-en="Commission Rate:"
+              data-hi="कमीशन दर:"
+              data-mr="कमिशन दर:"
               >Commission Rate:</span
             >
             <span id="commissionDisplay">28%</span>
@@ -1026,11 +1138,16 @@
             style="width: 100%; margin: 20px 0"
             data-en="Calculate Earnings"
             data-hi="कमाई की गणना करें"
+            data-mr="कमाई मोजा"
           >
             Calculate Earnings
           </button>
           <div class="calc-result" id="result" style="display: none">
-            <h4 data-en="Your Monthly Earnings" data-hi="आपकी मासिक आय">
+            <h4
+              data-en="Your Monthly Earnings"
+              data-hi="आपकी मासिक आय"
+              data-mr="तुमची मासिक कमाई"
+            >
               Your Monthly Earnings
             </h4>
             <div id="earnings"></div>
@@ -1045,6 +1162,7 @@
           style="color: white"
           data-en="Get In Touch"
           data-hi="संपर्क करें"
+          data-mr="संपर्क साधा"
         >
           Get In Touch
         </h2>
@@ -1054,16 +1172,23 @@
               style="color: #ffcc00; margin-bottom: 2rem"
               data-en="Contact Information"
               data-hi="संपर्क जानकारी"
+              data-mr="संपर्क माहिती"
             >
               Contact Information
             </h3>
             <div class="contact-item">
               <i class="fas fa-user"></i>
               <div>
-                <strong data-en="Akshay Oza" data-hi="अक्षय ओझा"
+                <strong
+                  data-en="Akshay Oza"
+                  data-hi="अक्षय ओझा"
+                  data-mr="अक्षय ओझा"
                   >Akshay Oza</strong
                 ><br />
-                <span data-en="Development Officer" data-hi="विकास अधिकारी"
+                <span
+                  data-en="Development Officer"
+                  data-hi="विकास अधिकारी"
+                  data-mr="विकास अधिकारी"
                   >Development Officer</span
                 >
               </div>
@@ -1082,6 +1207,7 @@
                 <span
                   data-en="Available 9 AM - 7 PM"
                   data-hi="सुबह 9 बजे - शाम 7 बजे उपलब्ध"
+                  data-mr="सकाळी 9 ते संध्याकाळी 7 उपलब्ध"
                   >Available 9 AM - 7 PM</span
                 >
               </div>
@@ -1100,6 +1226,7 @@
                 <span
                   data-en="Email for queries"
                   data-hi="प्रश्नों के लिए ईमेल करें"
+                  data-mr="प्रश्नांसाठी ईमेल करा"
                   >Email for queries</span
                 >
               </div>
@@ -1110,19 +1237,25 @@
                 <strong
                   data-en="LIC Branch Office"
                   data-hi="एलआईसी शाखा कार्यालय"
+                  data-mr="एलआयसी शाखा कार्यालय"
                   >LIC Branch Office</strong
                 ><br />
-                <span data-en="Branch No: 931" data-hi="शाखा संख्या: 931"
+                <span
+                  data-en="Branch No: 931"
+                  data-hi="शाखा संख्या: 931"
+                  data-mr="शाखा क्र: 931"
                   >Branch No: 931</span
                 ><br />
                 <span
                   data-en="2nd Floor, LIC Building, Oriental Building"
                   data-hi="दूसरी मंजिल, एलआईसी भवन, ओरिएंटल भवन"
+                  data-mr="दुसरा मजला, एलआयसी इमारत, ओरिएंटल इमारत"
                   >2nd Floor, LIC Building, Oriental Building</span
                 ><br />
                 <span
                   data-en="Hutatma Chowk, Fort, Mumbai - 400001"
                   data-hi="हुतात्मा चौक, फोर्ट, मुंबई - 400001"
+                  data-mr="हुतात्मा चौक, फोर्ट, मुंबई - 400001"
                   >Hutatma Chowk, Fort, Mumbai - 400001</span
                 ><br />
                 <a
@@ -1135,6 +1268,7 @@
                   "
                   data-en="Get Directions"
                   data-hi="दिशा-निर्देश प्राप्त करें"
+                  data-mr="नकाशा मिळवा"
                 >
                   Get Directions
                 </a>
@@ -1146,6 +1280,7 @@
               style="color: #ffcc00; margin-bottom: 2rem"
               data-en="Scan to Connect"
               data-hi="जुड़ने के लिए स्कैन करें"
+              data-mr="जोडण्यासाठी स्कॅन करा"
             >
               Scan to Connect
             </h3>
@@ -1162,6 +1297,7 @@
                 class="line1"
                 data-en="Scan QR code to save contact details"
                 data-hi="संपर्क विवरण सहेजने के लिए QR कोड स्कैन करें"
+                data-mr="संपर्क माहिती जतन करण्यासाठी QR कोड स्कॅन करा"
               >
                 Scan QR code to save contact details
               </p>
@@ -1169,6 +1305,7 @@
                 class="line2"
                 data-en="and connect on WhatsApp"
                 data-hi="और WhatsApp पर जुड़ें"
+                data-mr="आणि WhatsApp वर कनेक्ट करा"
               >
                 and connect on WhatsApp
               </p>
@@ -1179,6 +1316,7 @@
               style="margin-top: 1rem"
               data-en='<i class="fab fa-whatsapp"></i> WhatsApp Me'
               data-hi='<i class="fab fa-whatsapp"></i> WhatsApp करें'
+              data-mr='<i class="fab fa-whatsapp"></i> मला WhatsApp करा'
             >
               <i class="fab fa-whatsapp"></i> WhatsApp Me
             </a>
@@ -1233,12 +1371,14 @@
         <p
           data-en="© 2025 Akshay Oza - LIC Development Officer. All rights reserved."
           data-hi="© 2025 अक्षय ओझा - एलआईसी डेवलपमेंट ऑफिसर। सर्वाधिकार सुरक्षित।"
+          data-mr="© 2025 अक्षय ओझा - एलआयसी विकास अधिकारी. सर्व हक्क राखीव."
         >
           © 2025 Akshay Oza - LIC Development Officer. All rights reserved.
         </p>
         <p
           data-en="LIC of India - Mumbai Division"
           data-hi="भारतीय जीवन बीमा निगम - मुंबई मंडल"
+          data-mr="भारतीय आयुर्विमा महामंडळ - मुंबई विभाग"
         >
           LIC of India - Mumbai Division
         </p>
@@ -1246,45 +1386,37 @@
     </footer>
 
     <script>
-      // Language Toggle Script
-      const langEnButton = document.getElementById("lang-en");
-      const langHiButton = document.getElementById("lang-hi");
+      // Language Dropdown Script
+      const languageSelect = document.getElementById("language-select");
       const translatableElements = document.querySelectorAll("[data-en]");
 
       function setLanguage(lang) {
         translatableElements.forEach((element) => {
           if (
             element.tagName === "INPUT" &&
-            element.hasAttribute("data-en-placeholder")
+            element.hasAttribute(`data-${lang}-placeholder`)
           ) {
             element.placeholder = element.getAttribute(
               `data-${lang}-placeholder`
             );
           } else if (
             element.tagName === "A" &&
-            element.hasAttribute("data-en")
+            element.hasAttribute(`data-${lang}`)
           ) {
             // Handle innerHTML for <a> tags like the CTA button
             element.innerHTML = element.getAttribute(`data-${lang}`);
-          } else {
+          } else if (element.hasAttribute(`data-${lang}`)) {
             element.textContent = element.getAttribute(`data-${lang}`);
           }
         });
-
-        langEnButton.classList.remove("active");
-        langHiButton.classList.remove("active");
-        if (lang === "en") {
-          langEnButton.classList.add("active");
-        } else {
-          langHiButton.classList.add("active");
-        }
       }
 
-      langEnButton.addEventListener("click", () => setLanguage("en"));
-      langHiButton.addEventListener("click", () => setLanguage("hi"));
+      languageSelect.addEventListener("change", (event) => {
+        setLanguage(event.target.value);
+      });
 
       // Set default language on load
-      setLanguage("en");
+      setLanguage(languageSelect.value);
 
       // Mobile Menu Toggle Script
       const mobileMenu = document.querySelector(".mobile-menu");
@@ -1294,10 +1426,10 @@
         navLinks.classList.toggle("active");
       });
 
-      navLinks.querySelectorAll("a").forEach(link => { 
-          link.addEventListener("click", () => {
-              navLinks.classList.remove("active"); 
-          });
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
       });
 
       // Carousel Script
